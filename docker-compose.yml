@@ -2,14 +2,19 @@ version: '3.8'
 
 services:
   app:
-    image: evershop/evershop:latest
+    image: ecom-shop-template
     restart: always
+    container_name: ecom-website
     environment:
       DB_HOST: database
       DB_PORT: 5432
       DB_PASSWORD: postgres
       DB_USER: postgres
       DB_NAME: postgres
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "3"
     networks:
       - myevershop
     depends_on:
@@ -21,6 +26,7 @@ services:
   database:
     image: postgres:16
     restart: unless-stopped
+    container_name: database
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
@@ -29,6 +35,10 @@ services:
       POSTGRES_DB: postgres
     ports:
       - "5432:5432"
+    logging:
+      options:
+        max-size: "100m"
+        max-file: "3"
     networks:
       - myevershop
 

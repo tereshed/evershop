@@ -6,9 +6,18 @@ import ReactDOM from 'react-dom';
 import Area from '@components/common/Area';
 import { App } from '@components/common/react/client/Client';
 import { HotReload } from '@components/common/react/client/HotReload';
+import TagManager from 'react-gtm-module';
 
 // eslint-disable-next-line import/no-unresolved
 const hot = require('webpack-hot-middleware/client?path=/eHot&reload=true&overlay=true');
+
+// Tag Manager Initialization
+const tagManagerArgs = {
+  gtmId: 'GTM-PW2DKHPW'
+}
+
+TagManager.initialize(tagManagerArgs)
+
 /** render */
 ReactDOM.render(
   <App>

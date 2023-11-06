@@ -123,6 +123,7 @@
     "webpackbar": "^5.0.2",
     "winston": "^3.3.3",
     "yargs": "^16.2.0",
-    "zero-decimal-currencies": "^1.2.0"
+    "zero-decimal-currencies": "^1.2.0",
+    "react-gtm-module": "^2.0.11"
   }
 }
